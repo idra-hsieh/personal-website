@@ -3,10 +3,11 @@ on: [push, pull_request]
 jobs:
   ci:
     runs-on: ubuntu-latest
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: 'pnpm' }
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile || npm ci
-      - run: npm run -s build || echo "build will pass after scaffold"
+        with: { node-version: 20, cache: 'npm' }
+      - run: npm ci
+      - run: npm run build
