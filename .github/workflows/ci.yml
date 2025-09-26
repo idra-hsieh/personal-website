@@ -15,7 +15,5 @@ jobs:
         run: npm ci --foreground-scripts
         env:
           NPM_CONFIG_IGNORE_OPTIONAL: 'false'
-      - name: Patch SWC if needed
-        run: npx next --turbo || true
       - name: Build
         run: npm run build
