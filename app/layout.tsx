@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
 import "./globals.css";
 
+// components
+import Header from "@/components/Header";
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   weight: ["100","200", "300", "400", "500", "600", "700", "800", "900"],
@@ -23,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
