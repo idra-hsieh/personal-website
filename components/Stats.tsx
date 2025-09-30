@@ -6,7 +6,7 @@ const stats = [
   { num: 5, text: "DS projects completed" },
   { num: 3, text: "SW projects completed" },
   { num: 4, text: "Texhnologies mastered" },
-  { num: 12, text: "Code commits" },
+  { num: 20, text: "Code commits" },
 ]
 
 const Stats = () => {
@@ -23,6 +23,7 @@ const Stats = () => {
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"
                 />
+                <span className="text-4xl xl:text-6xl font-extrabold">+</span>
                 <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
                   } leading-snug text-[#857b74]/80`}>{item.text}</p>
               </div>
