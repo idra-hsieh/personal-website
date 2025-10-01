@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lato, Fraunces } from "next/font/google";
+import { Fraunces, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 
 // components
@@ -13,10 +13,10 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-const lato = Lato({
+const nunitosans = Nunito_Sans({
   subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-  variable: "--font-lato",
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
+  variable: "--font-nunitosans",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={fraunces.variable}>
+      <body className={`${fraunces.variable} ${nunitosans.variable}`}>
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
