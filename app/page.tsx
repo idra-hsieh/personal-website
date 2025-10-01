@@ -8,7 +8,7 @@ import Stats from "@/components/Stats";
 
 const Home = () => {
   return (
-    <section className="h-full text-[#857b74]">
+    <section className="h-full text-foreground">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center
         justify-between xl:pt-8 xl:pb-24">
@@ -18,7 +18,7 @@ const Home = () => {
             <h1 className="h1">
               Hi, I'm <br /> <span className="text-accent">Idra Hsieh</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-[#857b74]/80">
+            <p className="max-w-[500px] mb-9 text-foreground/80">
               I craft elegant digital experiences through thoughtful design
               and up-to-date technologies. Let's get in touch!
             </p>

@@ -44,7 +44,7 @@ function TabsTrigger({
       className={cn(
         `
         inline-flex items-center w-full bg-[rgb(222,218,215)]
-        justify-center whitespace-nowrap text-[#857b74] rounded-lg p-3
+        justify-center whitespace-nowrap text-foreground rounded-lg p-3
         text-base font-medium ring-offset-white transition-all
         disabled:pointer-events-none disabled:opacity-50
         data-[state=active]:bg-accent/85 data-[state=active]:text-primary

@@ -25,7 +25,7 @@ const Stats = () => {
                 />
                 <span className="text-4xl xl:text-6xl font-extrabold">+</span>
                 <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-                  } leading-snug text-[#857b74]/80`}>{item.text}</p>
+                  } leading-snug text-foreground/80`}>{item.text}</p>
               </div>
             );
           })}
