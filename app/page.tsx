@@ -18,7 +18,7 @@ const Home = () => {
             <h1 className="h1">
               Hi, I'm <br /> <span className="text-accent">Idra Hsieh</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-foreground/80 font-sans">
+            <p className="max-w-[500px] mt-4 mb-9 text-foreground/80 font-sans">
               I craft elegant digital experiences through thoughtful design
               and up-to-date technologies. Let's get in touch!
             </p>
