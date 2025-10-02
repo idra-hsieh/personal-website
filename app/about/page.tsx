@@ -196,7 +196,7 @@ const About = () => {
                                         {skills.description}
                                     </p>
                                 </div>
-                                <ul className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 xl:gap-[30px]'>
+                                <ul className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
                                     {skills.skilllist.map((skill, index) => {
                                         return (
                                             <li key={index}>
