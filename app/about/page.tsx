@@ -98,7 +98,7 @@ const About = () => {
                     defaultValue='experience'
                     className='flex flex-col lg:flex-row gap-[60px]'
                 >
-                    <TabsList className='lg:flex lg:flex-col lg:w-auto lg:flex-[1] lg:max-w-[220px] w-full mx-auto xl:mx-0 gap-6'>
+                    <TabsList className='lg:flex lg:flex-col lg:w-auto lg:flex-[1] lg:max-w-[220px] w-full mx-auto xl:mx-0 gap-6 px-8 lg:px-0'>
                         <TabsTrigger value="experience">Experience</TabsTrigger>
                         <TabsTrigger value="education">Education</TabsTrigger>
                         <TabsTrigger value="skills">Skills</TabsTrigger>
@@ -109,7 +109,7 @@ const About = () => {
                     <div className='flex-[3] min-h-[70vh] w-full'>
                         {/* experience */}
                         <TabsContent value="experience" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-8 lg:px-0'>
                                 <h3 className='text-foreground text-4xl font-bold'>{experience.title}</h3>
                                 <p className='max-w-[600px] text-foreground/60 mx-auto xl:mx-0'>
                                     {experience.description}
@@ -147,7 +147,7 @@ const About = () => {
 
                         {/* education */}
                         <TabsContent value="education" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-8 lg:px-0'>
                                 <h3 className='text-foreground text-4xl font-bold'>{education.title}</h3>
                                 <p className='max-w-[600px] text-foreground/60 mx-auto xl:mx-0'>
                                     {education.description}
@@ -185,7 +185,7 @@ const About = () => {
 
                         {/* skills */}
                         <TabsContent value="skills" className='w-full'>
-                            <div className="flex flex-col gap-[30px]">
+                            <div className="flex flex-col gap-[30px] px-8 lg:px-0">
                                 <div className='flex flex-col gap-[30px] text-center lg:text-left'>
                                     <h3 className='text-foreground text-4xl font-bold'>{skills.title}</h3>
                                     <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
