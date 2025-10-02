@@ -113,7 +113,7 @@ const About = () => {
                     <div className='flex-[3] min-h-[70vh] w-full'>
                         {/* experience */}
                         <TabsContent value="experience" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center lg:text-left px-8 lg:px-0'>
+                            <div className='flex flex-col gap-[30px] text-center lg:text-left px-12 lg:px-0 lg:pr-12'>
                                 <h3 className='text-foreground text-4xl font-bold'>{experience.title}</h3>
                                 <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                     {experience.description}
@@ -151,7 +151,7 @@ const About = () => {
 
                         {/* education */}
                         <TabsContent value="education" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-8 lg:px-0'>
+                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-12 lg:px-0 lg:pr-12'>
                                 <h3 className='text-foreground text-4xl font-bold'>{education.title}</h3>
                                 <p className='max-w-[600px] text-foreground/60 mx-auto xl:mx-0'>
                                     {education.description}
@@ -189,14 +189,14 @@ const About = () => {
 
                         {/* skills */}
                         <TabsContent value="skills" className='w-full'>
-                            <div className="flex flex-col gap-[30px] px-8 lg:px-0">
+                            <div className="flex flex-col gap-[30px] px-12 lg:px-0 lg:pr-12">
                                 <div className='flex flex-col gap-[30px] text-center lg:text-left'>
                                     <h3 className='text-foreground text-4xl font-bold'>{skills.title}</h3>
                                     <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                         {skills.description}
                                     </p>
                                 </div>
-                                <ul className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
+                                <ul className='grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-4 xl:gap-[30px]'>
                                     {skills.skilllist.map((skill, index) => {
                                         return (
                                             <li key={index}>
@@ -221,7 +221,7 @@ const About = () => {
 
                         {/* beyond */}
                         <TabsContent value="beyond" className='w-full text-center lg:text-left'>
-                            <div className='flex flex-col gap-[30px] px-8 lg:px-0'>
+                            <div className='flex flex-col gap-[30px] px-8 lg:px-0 lg:pr-12'>
                                 <h3 className='text-4xl font-bold'>{beyond.title}</h3>
                                 <p className='max-w-[800px] text-foreground/60 mx-auto lg:mx-0'>
                                     {beyond.description}
