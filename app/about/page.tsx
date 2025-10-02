@@ -237,7 +237,7 @@ const About = () => {
                                         )
                                     })}
                                 </ul>
-                                <p className='text-xl font-bold -mb-2'>Highlight</p>
+                                <p className='text-xl font-bold -mb-2'>Highlights</p>
                                 <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0'>
                                     {beyondhighlight.info.map((item, index) => {
                                         return (
