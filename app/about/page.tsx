@@ -60,14 +60,18 @@ const skills = {
 // beyond data
 const beyond = {
     title: "Beyond Engineering",
-    description: "With experience in consulting and business, I bring strengths in project management, user insight, and cross-team communication — complementing my technical work with a strong product and market perspective.",
+    description: "Consulting and business experience strengthen my technical work with project management, user insight, and cross-team communication, adding a strong product and market perspective.",
     info: [
-        { fieldName: "Pre-Series A Startup (U.S.-based)", fieldValue: "2024-2025 Business Development Specialist" },
-        { fieldName: "Boston Consulting Group", fieldValue: "2023-2024 Part-time Assistant" },
-        { fieldName: "KPMG Management Consulting", fieldValue: "2022-2023 Data Science Researcher" },
-        { fieldName: "Key Strengths", fieldValue: "Project Management, Market & User Experience, Teamwork" },
-        { fieldName: "Projects", fieldValue: "Market Entry, User Segmentation, Sales Performance Optimization" },
-        { fieldName: "Languages", fieldValue: "English (Professional, IELTS 8.0), Japanese (JLPT N1), Chinese (Native)" },
+        { fieldName: "2024-2025 | Pre-Series A Startup (U.S.-based)", fieldValue: "Business Development Specialist" },
+        { fieldName: "2023-2024 | Boston Consulting Group", fieldValue: "Part-time Assistant" },
+        { fieldName: "2022-2023 | KPMG Management Consulting", fieldValue: "Data Science Researcher" },
+    ]
+};
+const beyondhighlight = {
+    info: [
+        { fieldName: "Key Strengths", fieldValue: "Project Management, User Experience, Market Analysis, Teamwork" },
+        // { fieldName: "Projects", fieldValue: "Market Entry, User Segmentation, Sales Performance Optimization" },
+        { fieldName: "Languages", fieldValue: "English (Professional, IELTS 8.0), Japanese (Conversational, JLPT N1), Chinese (Native)" },
     ]
 };
 
@@ -109,9 +113,9 @@ const About = () => {
                     <div className='flex-[3] min-h-[70vh] w-full'>
                         {/* experience */}
                         <TabsContent value="experience" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-8 lg:px-0'>
+                            <div className='flex flex-col gap-[30px] text-center lg:text-left px-8 lg:px-0'>
                                 <h3 className='text-foreground text-4xl font-bold'>{experience.title}</h3>
-                                <p className='max-w-[600px] text-foreground/60 mx-auto xl:mx-0'>
+                                <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                     {experience.description}
                                 </p>
                                 <ScrollArea className='h-[400px] font-sans'>
@@ -216,8 +220,35 @@ const About = () => {
                         </TabsContent>
 
                         {/* beyond */}
-                        <TabsContent value="beyond" className='w-full'>
-                            beyond
+                        <TabsContent value="beyond" className='w-full text-center lg:text-left'>
+                            <div className='flex flex-col gap-[30px] px-8 lg:px-0'>
+                                <h3 className='text-4xl font-bold'>{beyond.title}</h3>
+                                <p className='max-w-[800px] text-foreground/60 mx-auto lg:mx-0'>
+                                    {beyond.description}
+                                </p>
+                                <p className='text-xl font-bold -mt-1 -mb-2'>Other experience</p>
+                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0'>
+                                    {beyond.info.map((item, index) => {
+                                        return (
+                                            <li key={index} className='flex items-center justify-center lg:justify-start gap-4'>
+                                                <span className='text-foreground'>{item.fieldName}</span>
+                                                <span className='text-foreground/60 text-[16px] '>{item.fieldValue}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                                <p className='text-xl font-bold -mb-2'>Highlight</p>
+                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0'>
+                                    {beyondhighlight.info.map((item, index) => {
+                                        return (
+                                            <li key={index} className='flex items-center justify-center lg:justify-start gap-4'>
+                                                <span className='text-foreground'>{item.fieldName}</span>
+                                                <span className='text-foreground/60 text-[16px]'>{item.fieldValue}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
                         </TabsContent>
                     </div>
                 </Tabs>
