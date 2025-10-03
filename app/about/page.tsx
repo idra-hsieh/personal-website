@@ -36,7 +36,7 @@ const education = {
         { institution: "freeCodeCamp Online Bootcamp", degree: "Full Stack Web Development", duration: "2025-2026" },
         { institution: "CS50, Harvard University", degree: "Introduction to Computer Science", duration: "2025" },
         { institution: "University of London", degree: "BSc in Computer Science ", duration: "2024" },
-        { institution: "AppWorks, Jamie Lin (founder)", degree: "Gap Year Program Fellow", duration: "2023-2024" },
+        { institution: "AppWorks, Jamie Lin (founder)", degree: "Startup Gap Year Program Fellow", duration: "2023-2024" },
         { institution: "University of London", degree: "BSc in Mathematics and Economics", duration: "2022-2023" },
     ],
 };
@@ -63,8 +63,8 @@ const beyond = {
     description: "Consulting and business experience strengthen my technical work with project management, user insight, and cross-team communication, adding a strong product and market perspective.",
     info: [
         { fieldName: "2024-2025 | Pre-Series A Startup (U.S.-based)", fieldValue: "Business Development Specialist" },
-        { fieldName: "2023-2024 | Boston Consulting Group", fieldValue: "Part-time Assistant" },
-        { fieldName: "2022-2023 | KPMG Management Consulting", fieldValue: "Data Science Researcher" },
+        { fieldName: "2023-2024 | Boston Consulting Group", fieldValue: "Part-time Assistant (Internship)" },
+        { fieldName: "2022-2023 | KPMG Management Consulting", fieldValue: "Data Science Researcher (Internship)" },
     ]
 };
 const beyondhighlight = {
