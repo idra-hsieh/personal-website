@@ -17,15 +17,16 @@ import {
 
 import Link from "next/link";
 import Image from "next/image";
+import { handleClientScriptLoad } from "next/script";
 
 const projects = [
     {
         num: "01",
         category: "frontend",
         title: "project 1",
-        description: "(placeholder for description",
+        description: "(placeholder for description)",
         stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
-        // image: "/assets/work/thumb1.png", // placeholder for project 1 image
+        image: "/assets/work/thumb1.jpg", // placeholder for project 1 image
         live: "",
         github: "",
     },
@@ -33,9 +34,9 @@ const projects = [
         num: "02",
         category: "fullstack",
         title: "project 2",
-        description: "(placeholder for description",
+        description: "(placeholder for description)",
         stack: [{ name: "Next.js" }, { name: "Tailwind Css" }, { name: "Node.js" }],
-        // image: "/assets/work/thumb2.png", // placeholder for project 1 image
+        image: "/assets/work/thumb2.png", // placeholder for project 1 image
         live: "",
         github: "",
     },
@@ -43,9 +44,9 @@ const projects = [
         num: "03",
         category: "fullstack",
         title: "project 3",
-        description: "(placeholder for description",
+        description: "(placeholder for description)",
         stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }],
-        // image: "/assets/work/thumb3.png", // placeholder for project 1 image
+        image: "/assets/work/thumb3.jpg", // placeholder for project 1 image
         live: "",
         github: "",
     },
@@ -53,10 +54,18 @@ const projects = [
 
 const Work = () => {
     const [project, setProject] = useState(projects[0]);
+
+    const handleSlideChange = (swiper) => {
+        // get current slide index
+        const currentIndex = swiper.activeIndex;
+        // update project state based on current slide index
+        setProject(projects[currentIndex]);
+    }
+
     return (
         <motion.section
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
             className="min-h-[80vh] flex flex-col justify-center py-12 lg:px-0"
         >
             <div className="container mx-auto">
@@ -140,7 +149,34 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-[50%]">slider</div>
+                    <div className="w-full lg:w-[50%]">
+                        <Swiper
+                            spaceBetween={30}
+                            slidesPerView={1}
+                            className="xl:h=[520px] mb-12"
+                            onSlideChange={handleSlideChange}
+                        >
+                            {projects.map((project, index) => {
+                                return (
+                                    <SwiperSlide key={index} className="w-full">
+                                        <div
+                                            className={`
+                                                h-[460px] relative group flex justify-center
+                                                items-center bg-foreground/20
+                                            `}
+                                        >
+                                            {/* overlay */}
+                                            <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                                            {/* image */}
+                                            <div className="relative w-full h-full">
+                                                <Image src={project.image} fill className="object-cover" alt="" />
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                )
+                            })}
+                        </Swiper>
+                    </div>
                 </div>
             </div>
         </motion.section>
