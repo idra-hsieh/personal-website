@@ -226,8 +226,8 @@ const About = () => {
                                 <p className='max-w-[800px] text-foreground/60 mx-auto lg:mx-0'>
                                     {beyond.description}
                                 </p>
-                                <p className='text-xl font-bold -mt-1 -mb-2'>Other experience</p>
-                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0'>
+                                <p className='text-xl font-bold -mt-1 -mb-2 font-sans'>Other experience</p>
+                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0 font-sans'>
                                     {beyond.info.map((item, index) => {
                                         return (
                                             <li key={index} className='flex items-center justify-center lg:justify-start gap-4'>
@@ -237,8 +237,8 @@ const About = () => {
                                         )
                                     })}
                                 </ul>
-                                <p className='text-xl font-bold -mb-2'>Highlights</p>
-                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0'>
+                                <p className='text-xl font-bold -mb-2 font-sans'>Highlights</p>
+                                <ul className='grid grid-cols-1 lg:grid-cols-1 gap-y-4 max-w-[850px] mx-auto lg:mx-0 font-sans'>
                                     {beyondhighlight.info.map((item, index) => {
                                         return (
                                             <li key={index} className='flex items-center justify-center lg:justify-start gap-4'>
