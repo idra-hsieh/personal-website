@@ -73,7 +73,7 @@ const Work = () => {
                     <div
                         className={`
                             w-full lg:w-[50%] lg:h-[460px] flex flex-col
-                            lg:justify-betweenorder-2 lg:order-none
+                            lg:justify-between order-2 lg:order-none
                         `}
                     >
                         <div className="flex flex-col gap-[30px] h-[50%]">
@@ -120,7 +120,7 @@ const Work = () => {
                                                     flex justify-center items-center group
                                                 `}
                                             >
-                                                <BsArrowUpRight className="text-foregroubd text-3xl group-hover:text-accent" />
+                                                <BsArrowUpRight className="text-foreground text-3xl group-hover:text-accent" />
                                             </TooltipTrigger>
                                             <TooltipContent>
                                                 <p>Live Project</p>
@@ -153,24 +153,28 @@ const Work = () => {
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
-                            className="xl:h=[520px] mb-12"
+                            className="xl:h-[520px] mb-12 !bg-foreground"
                             onSlideChange={handleSlideChange}
                         >
                             {projects.map((project, index) => {
                                 return (
-                                    <SwiperSlide key={index} className="w-full">
+                                    <SwiperSlide key={index} className="w-full !bg-transparent">
                                         <div
-                                            className={`
-                                                h-[460px] relative group flex justify-center
+                                            className="
+                                                relative h-[460px] relative group flex justify-center
                                                 items-center bg-foreground/20
-                                            `}
+                                            "
                                         >
                                             {/* overlay */}
-                                            <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10">
-                                            </div>
+                                            <div
+                                                className="
+                                                    absolute top-0 bottom-0 w-full h-full
+                                                    bg-foreground/10 z-10
+                                                "
+                                            ></div>
                                             {/* image */}
-                                            <div className="relative w-full h-full">
-                                                <Image src={project.image} fill className="object-cover" alt="" />
+                                            <div className="relative w-full h-full z-0">
+                                                <Image src={project.image} alt="" fill className="object-cover" />
                                             </div>
                                         </div>
                                     </SwiperSlide>
