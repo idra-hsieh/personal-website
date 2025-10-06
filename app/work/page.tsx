@@ -92,14 +92,14 @@ const Work = () => {
                                 {project.category} project
                             </h2>
                             {/* project description */}
-                            <p className="text-foreground/60">
+                            <p className="text-foreground/60 font-sans">
                                 {project.description}
                             </p>
                             {/* stack */}
                             <ul className="flex gap-4">
                                 {project.stack.map((item, index) => {
                                     return (
-                                        <li key={index} className="text-xl text-accent">
+                                        <li key={index} className="text-l text-accent">
                                             {item.name}
                                             {/* make sure to not put comma after the last item*/}
                                             {index !== project.stack.length - 1 && ","}
