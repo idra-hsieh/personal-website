@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { handleClientScriptLoad } from "next/script";
+import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
     {
@@ -66,7 +67,7 @@ const Work = () => {
         <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
-            className="min-h-[80vh] flex flex-col justify-center py-12 px-12 lg:px-0 -mt-8"
+            className="min-h-[80vh] flex flex-col justify-center py-12 px-12 lg:px-0 -mt-10"
         >
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row lg:gap-[30px]">
@@ -180,6 +181,17 @@ const Work = () => {
                                     </SwiperSlide>
                                 )
                             })}
+                            {/* slider buttons */}
+                            <WorkSliderBtns
+                                containerStyles="
+                                    absolute inset-x-3 top-1/2 -translate-y-1/2 z-20 flex
+                                    justify-between gap-3
+                                "
+                                btnStyles="
+                                    bg-accent hover:bg-accent-hover text-primary text-[22px]
+                                    w-[44px] h-[44px] flex justify-center items-center transition-all
+                                "
+                            />
                         </Swiper>
                     </div>
                 </div>
