@@ -36,7 +36,7 @@ const projects = [
         title: "project 2",
         description: "(placeholder for description)",
         stack: [{ name: "Next.js" }, { name: "Tailwind Css" }, { name: "Node.js" }],
-        image: "/assets/work/thumb2.png", // placeholder for project 1 image
+        image: "/assets/work/thumb2.jpg", // placeholder for project 1 image
         live: "",
         github: "",
     },
@@ -66,13 +66,13 @@ const Work = () => {
         <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
-            className="min-h-[80vh] flex flex-col justify-center py-12 lg:px-0"
+            className="min-h-[80vh] flex flex-col justify-center py-12 px-12 lg:px-0 -mt-8"
         >
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row lg:gap-[30px]">
                     <div
                         className={`
-                            w-full lg:w-[50%] lg:h-[460px] flex flex-col
+                            w-full lg:w-[40%] flex flex-col
                             lg:justify-between order-2 lg:order-none
                         `}
                     >
@@ -149,20 +149,20 @@ const Work = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-[50%]">
+                    <div className="w-full lg:w-[60%]">
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
-                            className="xl:h-[520px] mb-12 !bg-foreground"
+                            className="xl:h-[520px] mb-12"
                             onSlideChange={handleSlideChange}
                         >
                             {projects.map((project, index) => {
                                 return (
-                                    <SwiperSlide key={index} className="w-full !bg-transparent">
+                                    <SwiperSlide key={index} className="w-full">
                                         <div
                                             className="
-                                                relative h-[460px] relative group flex justify-center
-                                                items-center bg-foreground/20
+                                                relative aspect-[4/3] group overflow-hidden
+                                                bg-foreground/20
                                             "
                                         >
                                             {/* overlay */}
