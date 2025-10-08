@@ -53,8 +53,10 @@ const Contact = () => {
                             </div>
                             {/* select */}
                             <Select>
-                                <SelectTrigger className="w-full text-foreground/40">
-                                    <SelectValue placeholder="What Brings You Here?" />
+                                <SelectTrigger className="w-full">
+                                    <SelectValue
+                                        placeholder={<span className="text-foreground/40 font-light">What Brings You Here?</span>}
+                                    />
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectGroup>
