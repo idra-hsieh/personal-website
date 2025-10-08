@@ -19,7 +19,7 @@ import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaLink } from "react-icons/fa";
 const info = [
     { icon: <FaPhoneAlt />, title: "Phone", info: "+886 975-665-265" },
     { icon: <FaEnvelope />, title: "Email", info: "idra.hsieh@gmail.com" },
-    { icon: <FaLinkedin />, title: "LinkedIn", info: "linkedin.com/in/idra-hsieh/", path: "https://www.linkedin.com/in/idra-hsieh/" },
+    { icon: <FaLinkedin />, title: "LinkedIn", info: "@idra-hsieh" },
 ];
 
 import { motion } from "framer-motion";
@@ -38,7 +38,7 @@ const Contact = () => {
                     "
                 >
                     {/* form */}
-                    <div className="lg:h-[54%] order-2 lg:order-none font-sans">
+                    <div className="lg:w-[60%] order-2 lg:order-none font-sans">
                         <form className="flex flex-col gap-6 p-10 bg-[#E8E6E4] rounded-lg">
                             <h3 className="text-2xl font-bold text-accent font-primary">Let's build something meaningful together.</h3>
                             <p>
@@ -121,7 +121,27 @@ const Contact = () => {
                         lg:order-none mb:8 lg:mb-0
                         "
                     >
-                        info
+                        <ul className="flex flex-col gap-10">
+                            {info.map((item, index) => {
+                                return (
+                                    <li key={index} className="flex items-center gap-6">
+                                        <div
+                                            className="
+                                                w-[52px] h-[52px] lg:w-[72px] lg:h-[72px]
+                                                bg-[#E8E6E4] text-accent rounded-md flex
+                                                items-center justify-center
+                                            "
+                                        >
+                                            <div className="text-[28px]">{item.icon}</div>
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="text-foreground/60">{item.title}</p>
+                                            <h3 className="text-xl">{item.info}</h3>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </div>
             </div>
