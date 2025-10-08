@@ -44,37 +44,75 @@ const Contact = () => {
                             <p>
                                 Whether it’s a collaboration, project idea, or opportunity, I’d love to hear from you.
                             </p>
+
                             {/* input */}
                             <div className="grid grid-cols-2 lg:grid-cols-1 gap-6">
-                                <Input type="firstname" required placeholder="First Name" />
-                                <Input type="lastname" required placeholder="Last Name" />
-                                <Input type="email" required placeholder="Email Address" />
-                                <Input type="phone" placeholder="Phone Number" />
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium px-1 mb-1">
+                                        First Name <span className="text-red-600">*</span>
+                                    </label>
+                                    <Input type="firstname" name="firstname" required placeholder="Idra" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium px-1 mb-1">
+                                        Last Name <span className="text-red-600">*</span>
+                                    </label>
+                                    <Input type="lastname" name="lastname" required placeholder="Hsieh" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium px-1 mb-1">
+                                        Email Address <span className="text-red-600">*</span>
+                                    </label>
+                                    <Input type="email" name="email" required placeholder="idra.hsieh@gmail.com" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <label className="text-sm font-medium px-1 mb-1">
+                                        Phone Number
+                                    </label>
+                                    <Input type="phone" name="phone" placeholder="+886 975-665-265" />
+                                </div>
                             </div>
+
                             {/* select */}
-                            <Select>
-                                <SelectTrigger className="w-full">
-                                    <SelectValue
-                                        placeholder={<span className="text-foreground/40 font-light">What Brings You Here?</span>}
-                                    />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectGroup>
-                                        <SelectLabel>I’m Reaching Out About...</SelectLabel>
-                                        <SelectItem value="job">Job Opportunity</SelectItem>
-                                        <SelectItem value="freelance">Freelance Project</SelectItem>
-                                        <SelectItem value="lecture">Speaking/Lecture Invitation</SelectItem>
-                                        <SelectItem value="collab">Collaboration Proposal</SelectItem>
-                                        <SelectItem value="media">Media/Press Inquiry</SelectItem>
-                                        <SelectItem value="other">Other</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
+                            <div className="flex flex-col">
+                                <label className="text-sm font-medium px-1 mb-1">
+                                    What Brings You Here? <span className="text-red-600">*</span>
+                                </label>
+                                <Select required>
+                                    <SelectTrigger className="w-full">
+                                        <SelectValue
+                                            placeholder={<span className="text-foreground/25 font-light">I’m reaching out about...</span>}
+                                        />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        <SelectGroup>
+                                            {/* <SelectLabel>I’m Reaching Out About...</SelectLabel> */}
+                                            <SelectItem value="job">Job Opportunity</SelectItem>
+                                            <SelectItem value="freelance">Freelance Project</SelectItem>
+                                            <SelectItem value="lecture">Speaking/Lecture Invitation</SelectItem>
+                                            <SelectItem value="collab">Collaboration Proposal</SelectItem>
+                                            <SelectItem value="media">Media/Press Inquiry</SelectItem>
+                                            <SelectItem value="other">Other</SelectItem>
+                                        </SelectGroup>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+
                             {/* textarea */}
-                            <Textarea
-                                className="h-[200px]"
-                                placeholder="Type your message here."
-                            />
+                            <div className="flex flex-col">
+                                <label className="text-sm font-medium px-1 mb-1">
+                                    Leave a Message <span className="text-red-600">*</span>
+                                </label>
+                                <Textarea
+                                    className="h-[200px]"
+                                    placeholder="Type your message here..."
+                                />
+                            </div>
+
+                            {/* btn */}
+                            <Button size="md" className="max-w-40">
+                                Send message
+                            </Button>
                         </form>
                     </div>
                     {/* info */}
