@@ -6,27 +6,30 @@ export default {
         {
             name: "title",
             type: "string",
-            tytle: "Idra's Building Blog"
+            title: "Idra's Building Blog"
         },
         {
             name: "slug",
             type: "slug",
-            tytle: "Slug of Idra's Building Blog",
+            title: "Slug of Idra's Building Blog",
+            options: {
+                source: "title",
+            }
         },
         {
             name: "titleImage",
             type: "image",
-            tytle: "Title Image",
+            title: "Title Image",
         },
         {
             name: "description",
             type: "text",
-            tytle: "Description",
+            title: "Description",
         },
         {
             name: "content",
             type: "array",
-            tytle: "Content",
+            title: "Content",
             of: [
                 {
                     type: "block",
