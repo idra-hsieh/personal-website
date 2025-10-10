@@ -31,9 +31,28 @@ export default {
             type: "array",
             title: "Content",
             of: [
+                { type: "block", },
+
+                /* inline image */
                 {
-                    type: "block",
-                }
+                    type: "image",
+                    options: { hotspot: true },
+
+                    fields: [
+                        { name: "alt", type: "string", title: "Alt text" },
+                        { name: "caption", type: "string", title: "Caption" },
+                    ]
+                },
+
+                /* divider line
+                {
+                    type: "object",
+                    name: "divider",
+                    title: "Divider Line",
+                    fields: [],
+                    preview: { prepare: () => ({ title: "Divider" }) },
+                },
+                */
             ]
         },
     ]
