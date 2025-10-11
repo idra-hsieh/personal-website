@@ -60,7 +60,7 @@ const skills = {
 // beyond data
 const beyond = {
     title: "Beyond Engineering",
-    description: "Consulting and business experience strengthen my technical work with project management, user insight, and cross-team communication, adding a strong product and market perspective.",
+    description: "Consulting and business experience strengthen my technical work with project management, user insight, and cross-team communication.",
     info: [
         { fieldName: "2024-2025 | Pre-Series A Startup (U.S.-based)", fieldValue: "Business Development Specialist" },
         { fieldName: "2023-2024 | Boston Consulting Group", fieldValue: "Part-time Assistant (Internship)" },
@@ -87,6 +87,10 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
+// to keep the same height for every tab section
+
+const tabWrap = "flex flex-col gap-[30px] text-center lg:text-left px-12 lg:px-0 lg:pr-12"
+
 const About = () => {
     return (
         <motion.div
@@ -95,7 +99,7 @@ const About = () => {
                 opacity: 1,
                 transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
             }}
-            className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'
+            className='min-h-[80vh] flex items-start justify-center py-12 lg:py-0'
         >
             <div className='container mx-auto'>
                 <Tabs
@@ -113,7 +117,7 @@ const About = () => {
                     <div className='flex-[3] min-h-[70vh] w-full'>
                         {/* experience */}
                         <TabsContent value="experience" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center lg:text-left px-12 lg:px-0 lg:pr-12'>
+                            <div className={tabWrap}>
                                 <h3 className='text-foreground text-4xl font-bold'>{experience.title}</h3>
                                 <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                     {experience.description}
@@ -151,9 +155,9 @@ const About = () => {
 
                         {/* education */}
                         <TabsContent value="education" className='w-full'>
-                            <div className='flex flex-col gap-[30px] text-center xl:text-left px-12 lg:px-0 lg:pr-12'>
+                            <div className={tabWrap}>
                                 <h3 className='text-foreground text-4xl font-bold'>{education.title}</h3>
-                                <p className='max-w-[600px] text-foreground/60 mx-auto xl:mx-0'>
+                                <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                     {education.description}
                                 </p>
                                 <ScrollArea className='h-[400px] font-sans'>
@@ -189,7 +193,7 @@ const About = () => {
 
                         {/* skills */}
                         <TabsContent value="skills" className='w-full'>
-                            <div className="flex flex-col gap-[30px] px-12 lg:px-0 lg:pr-12">
+                            <div className={tabWrap}>
                                 <div className='flex flex-col gap-[30px] text-center lg:text-left'>
                                     <h3 className='text-foreground text-4xl font-bold'>{skills.title}</h3>
                                     <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
@@ -221,9 +225,9 @@ const About = () => {
 
                         {/* beyond */}
                         <TabsContent value="beyond" className='w-full text-center lg:text-left'>
-                            <div className='flex flex-col gap-[30px] px-8 lg:px-0 lg:pr-12'>
+                            <div className={tabWrap}>
                                 <h3 className='text-4xl font-bold'>{beyond.title}</h3>
-                                <p className='max-w-[800px] text-foreground/60 mx-auto lg:mx-0'>
+                                <p className='max-w-[600px] text-foreground/60 mx-auto lg:mx-0'>
                                     {beyond.description}
                                 </p>
                                 <p className='text-xl font-bold -mt-1 -mb-2 font-sans'>Other experience</p>
