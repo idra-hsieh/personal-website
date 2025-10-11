@@ -32,10 +32,7 @@ const Contact = () => {
             className="py-6"
         >
             <div className="container m-auto">
-                <div className="
-                    flex flex-col lg:flex-row gap-[30px]
-                    px-8
-                    "
+                <div className="flex flex-col lg:flex-row lg:gap-[30px]"
                 >
                     {/* form */}
                     <div className="lg:w-[60%] order-2 lg:order-none font-sans">
@@ -118,7 +115,7 @@ const Contact = () => {
                     {/* info */}
                     <div className="
                         flex-1 flex items-center lg:justify-end order-1
-                        lg:order-none mb:8 lg:mb-0
+                        lg:order-none mb-8 lg:mb-0 mr-10
                         "
                     >
                         <ul className="flex flex-col gap-10">
