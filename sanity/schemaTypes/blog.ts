@@ -1,3 +1,5 @@
+import { useDateTimeFormat } from "sanity";
+
 export default {
     name: "blog",
     type: "document",
@@ -7,6 +9,15 @@ export default {
             name: "title",
             type: "string",
             title: "Idra's Building Blog"
+        },
+        {
+            name: "publishedAt",
+            type: "datetime",
+            title: "Published Dateg",
+            options: {
+                useDateTimeFormat: "YYYY-MM-DD",
+            },
+            initialValue: () => new Date().toISOString(),
         },
         {
             name: "slug",

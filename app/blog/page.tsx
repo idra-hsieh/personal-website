@@ -12,7 +12,8 @@ async function getData() {
         title,
             description,
             "currentSlug": slug.current,
-            titleImage
+            titleImage,
+            publishedAt,
     }`;
 
     const data = await client.fetch(query);
@@ -38,9 +39,18 @@ export default async function Home() {
                                 height={500}
                                 className="rounded-t-lg"
                             />
-                            <CardContent className="mt-5 font-sans">
-                                <h3 className="text-lg line-clamp-2 font-bold text-foreground">{post.title}</h3>
-                                <p className="line-clamp-3 text-sm mt-2 text-foreground/80">{post.description}</p>
+                            <CardContent className="mt-3 font-sans">
+                                {post.publishedAt && (
+                                    <p className="text-sm text-foreground/60 font-semibold mb-3">
+                                        {new Date(post.publishedAt).toLocaleDateString("en-GB", {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: "numeric",
+                                        }).replace(/ (\d{4})$/, ", $1")}
+                                    </p>
+                                )}
+                                <h3 className="text-lg line-clamp-2 font-bold text-foreground leading-relaxed">{post.title}</h3>
+                                <p className="line-clamp-3 text-sm mt-2 text-foreground/80 leading-relaxed">{post.description}</p>
                                 <Button asChild className="w-full mt-7">
                                     <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
                                 </Button>

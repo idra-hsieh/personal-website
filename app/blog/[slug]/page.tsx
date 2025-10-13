@@ -9,6 +9,7 @@ async function getData(slug: string) {
             title,
             content,
             titleImage,
+            publishedAt,
     }[0]`;
 
     const data = await client.fetch(query);
@@ -63,6 +64,8 @@ export default async function BlogArticle({ params }: { params: { slug: string }
 
     return (
         <div className="mt-2 flex flex-col items-center px-10 lg:px-0">
+
+            {/* title */}
             <h1 className="text-center">
                 {/* <span className="block text-base text-foreground/80 font-semibold tracking-wide uppercase">
                     ꧁ ༺  Idra's Building Blog  ༻ ꧂
@@ -71,6 +74,19 @@ export default async function BlogArticle({ params }: { params: { slug: string }
                     {data.title}
                 </span>
             </h1>
+
+            {/* published date */}
+            {data.publishedAt && (
+                <p className="text-base font-sans text-foreground/60 font-semibold mt-2">
+                    ｜ {new Date(data.publishedAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })} ｜
+                </p>
+            )}
+
+            {/* title image */}
             <Image
                 src={urlFor(data.titleImage).url()}
                 width={800}
