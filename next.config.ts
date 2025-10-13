@@ -12,4 +12,18 @@ const nextConfig: NextConfig = {
   }
 };
 
+// for inline images from sanity
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/**",
+      },
+    ],
+  },
+};
+
+
 export default nextConfig;
