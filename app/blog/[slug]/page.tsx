@@ -64,16 +64,16 @@ export default async function BlogArticle({ params }: { params: { slug: string }
     return (
         <div className="mt-2 flex flex-col items-center px-10 lg:px-0">
             <h1 className="text-center">
-                <span className="block text-base text-foreground/80 font-semibold tracking-wide uppercase">
+                {/* <span className="block text-base text-foreground/80 font-semibold tracking-wide uppercase">
                     ꧁ ༺  Idra's Building Blog  ༻ ꧂
-                </span>
-                <span className="mt-10 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl max-w-[800px] leading-relaxed">
+                </span> */}
+                <span className="mt-1 mb-3 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl max-w-[800px] leading-relaxed">
                     {data.title}
                 </span>
             </h1>
             <Image
                 src={urlFor(data.titleImage).url()}
-                width={900}
+                width={800}
                 height={800}
                 alt="personal website project"
                 priority
