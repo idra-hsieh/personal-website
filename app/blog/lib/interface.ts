@@ -1,13 +1,18 @@
+export type SanityImageRef = {
+    _type: "image";
+    asset: { _type: "reference"; _ref: string };
+};
+
 export interface simpleBlogCard {
     title: string;
     description: string;
     currentSlug: string;
-    titleImage: any;
+    titleImage: SanityImageRef | null;
 }
 
 export interface fullBlog {
-    currentSluf: string;
+    currentSlug: string;
     title: string;
-    content: any;
-    titleImage: any;
+    content: unknown;
+    titleImage: SanityImageRef | null;
 }
