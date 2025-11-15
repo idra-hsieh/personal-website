@@ -11,9 +11,17 @@ import {
 } from "@/components/ui/tooltip"
 
 const socials = [
-    { icon: <FaGithub />, path: "https://github.com/idra-hsieh", name: "GitHub" },
-    { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/idra-hsieh/", name: "LinkedIn" },
-    { icon: <SiSubstack />, path: "https://thebuilderslibrary.substack.com/", name: "Substack" },
+  { icon: <FaGithub />, path: "https://github.com/idra-hsieh", name: "GitHub" },
+  {
+    icon: <FaLinkedin />,
+    path: "https://www.linkedin.com/in/idra-hsieh/",
+    name: "LinkedIn",
+  },
+  {
+    icon: <SiSubstack />,
+    path: "https://idrasbuildingblog.substack.com/",
+    name: "Substack",
+  },
 ];
 
 // Define props type
