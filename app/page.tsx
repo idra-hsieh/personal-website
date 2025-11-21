@@ -10,8 +10,10 @@ const Home = () => {
   return (
     <section className="h-full text-foreground">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center
-        justify-between xl:pt-8 xl:pb-24">
+        <div
+          className="flex flex-col xl:flex-row items-center
+        justify-between xl:pt-8 xl:pb-24"
+        >
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none lg:-mt-10 px-10 lg:px-0">
             <span className="text-xl">Software Developer</span>
@@ -19,13 +21,17 @@ const Home = () => {
               Hi, I'm <br /> <span className="text-accent">Idra Hsieh</span>
             </h1>
             <p className="max-w-[500px] mt-4 mb-9 text-foreground/80 font-sans">
-              I craft elegant digital experiences through thoughtful design
-              and up-to-date technologies. Let's get in touch!
+              I craft elegant digital experiences through thoughtful design and
+              up-to-date technologies. Let's get in touch!
             </p>
 
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/assets/main/CV_Idra_Hsieh.pdf" target="_blank" rel="noopener noreferrer">
+              <a
+                href="/assets/main/CV_IdraHsieh.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   size="lg"
@@ -55,7 +61,7 @@ const Home = () => {
         <Stats />
       </div>
     </section>
-  )
+  );
 }
 
 export default Home;
