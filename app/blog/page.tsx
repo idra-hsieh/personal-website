@@ -22,7 +22,7 @@ export default async function Home() {
 
   return (
     <div className="container m-auto">
-      <div className="flex flex-col lg:flex-row lg:gap-[30px]">
+      <div className="flex flex-col lg:flex-row lg:gap-[30px] pb-24">
         <BlogGrid posts={data} />
       </div>
     </div>

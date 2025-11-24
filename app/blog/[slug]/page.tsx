@@ -114,7 +114,7 @@ const BlogArticle = (async ({ params }: { params: { slug: string } }) => {
   const data = await getData(params.slug);
 
   return (
-    <div className="mt-2 flex flex-col items-center px-10 lg:px-0">
+    <div className="mt-2 flex flex-col items-center px-10 lg:px-0 pb-24">
       {/* Title */}
       <h1 className="text-center">
         <span className="mt-1 mb-3 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl max-w-[800px] leading-relaxed">
