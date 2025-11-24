@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -26,6 +27,21 @@ const info = [
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("manzwrjb");
+  const [submittedName, setSubmittedName] = useState("");
+
+  const handleOnSubmit = (e) => {
+    // Create a FormData object from the form element (e.currentTarget)
+    const formData = new FormData(e.currentTarget);
+    const firstName = formData.get("firstname");
+
+    // Save the name to state
+    if (firstName) {
+      setSubmittedName(firstName.toString());
+    }
+
+    // Pass the event to Formspree's handler
+    handleSubmit(e);
+  };
 
   return (
     <motion.section
@@ -42,19 +58,26 @@ const Contact = () => {
           <div className="lg:w-[60%] order-2 lg:order-none font-sans">
             {/* 3. Handle success state */}
             {state.succeeded ? (
-              <div className="h-full flex flex-col items-center justify-center p-10 bg-[#E8E6E4] rounded-lg min-h-[400px]">
-                <h3 className="text-2xl font-bold text-accent font-primary mb-4">
+              <div className="h-auto flex flex-col items-center justify-center p-10 bg-[#E8E6E4] rounded-lg">
+                <h3 className="text-2xl font-bold text-accent font-primary mb-6">
                   Message Sent!
                 </h3>
-                <p className="text-center text-foreground/80">
-                  Thanks for reaching out, Idra. I'll get back to you at
-                  idra.hsieh@gmail.com soon.
-                </p>
+                <div className="text-center text-foreground/80 max-w-[450px]">
+                  <p className="mb-4">
+                    Thanks for reaching out, <span>{submittedName}</span>. I
+                    will respond via{" "}
+                    <span className="underline">idra.hsieh@gmail.com</span>{" "}
+                    within 48 hours.
+                  </p>
+                  <p className="text-sm italic">
+                    ❈ If you have not heard back after 7 days, please feel free
+                    to resubmit.
+                  </p>
+                </div>
               </div>
             ) : (
-              /* 4. Bind handleSubmit to the form */
               <form
-                onSubmit={handleSubmit}
+                onSubmit={handleOnSubmit}
                 className="flex flex-col gap-6 p-10 bg-[#E8E6E4] rounded-lg"
               >
                 <h3 className="text-2xl font-bold text-accent font-primary">
