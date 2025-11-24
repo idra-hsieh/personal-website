@@ -8,6 +8,7 @@ export interface simpleBlogCard {
     description: string;
     currentSlug: string;
     titleImage: SanityImageRef | null;
+    publishedAt?: string;
 }
 
 export interface fullBlog {

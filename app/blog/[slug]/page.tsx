@@ -1,14 +1,20 @@
 import Image from "next/image";
 import { client, urlFor } from "../lib/sanity";
-import { PortableText, type PortableTextComponents } from "next-sanity";
+import {
+  PortableText,
+  PortableTextBlock,
+  type PortableTextComponents,
+} from "next-sanity";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { SanityImageRef } from "../lib/interface";
 
 interface BlogData {
   currentSlug: string;
   title: string;
-  content: unknown;
-  titleImage?: unknown;
+  description: string;
+  content: PortableTextBlock[];
+  titleImage?: SanityImageRef | null;
   publishedAt?: string;
 }
 
@@ -26,6 +32,7 @@ async function getData(slug: string): Promise<BlogData> {
     *[_type == "blog" && slug.current == $slug][0] {
       "currentSlug": slug.current,
       title,
+      description,
       content,
       titleImage,
       publishedAt
@@ -117,7 +124,7 @@ const BlogArticle = (async ({ params }: { params: { slug: string } }) => {
 
       {/* Published date */}
       {data.publishedAt && (
-        <p className="text-base font-sans text-foreground/60 font-semibold mt-2">
+        <p className="text-sm font-sans text-foreground/60 font-semibold mt-2">
           |{" "}
           {new Date(data.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
@@ -128,19 +135,23 @@ const BlogArticle = (async ({ params }: { params: { slug: string } }) => {
         </p>
       )}
 
+      {/* Description */}
+      <h2 className="text-center">
+        <span className="italic text-md text-foreground/80 leading-8 leading-relaxed block mx-auto max-w-[600px] mt-6 mb-2">
+          {data.description}
+        </span>
+      </h2>
+
       {/* Title image */}
       {data.titleImage && (
-        <figure className="mt-8 w-full flex justify-center">
-          <div className="relative w-full max-w-[800px] aspect-video overflow-hidden rounded-lg border border-foreground/20">
-            <Image
-              src={urlFor(data.titleImage).url()}
-              alt="personal website project"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
-        </figure>
+        <Image
+          src={urlFor(data.titleImage).url()}
+          width={800}
+          height={800}
+          alt="personal website project"
+          priority
+          className="rounded-lg mt-8 border border-foreground/20"
+        />
       )}
 
       {/* Main content */}
