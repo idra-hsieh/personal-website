@@ -62,6 +62,10 @@ const ptComponents: PortableTextComponents = {
       );
     },
 
+    divider: () => {
+      return <hr className="w-full h-[1px] bg-foreground/20 border-0 my-12" />;
+    },
+
     code: ({ value }: CodeBlockProps) => {
       return (
         <div className="my-8 relative rounded-lg overflow-hidden bg-[#1e1e1e]">

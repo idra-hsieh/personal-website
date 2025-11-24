@@ -57,15 +57,25 @@ export default {
 
         {type: 'code'},
 
-        /* divider line
-                {
-                    type: "object",
-                    name: "divider",
-                    title: "Divider Line",
-                    fields: [],
-                    preview: { prepare: () => ({ title: "Divider" }) },
-                },
-                */
+        /* divider line */
+        {
+          type: 'object',
+          name: 'divider',
+          title: 'Divider Line',
+          fields: [
+            // We add a fake field to make the object valid, though we won't use it.
+            // Sanity objects usually require at least one field.
+            {
+              name: 'style',
+              type: 'string',
+              title: 'Style',
+              initialValue: 'solid',
+              options: {list: ['solid']},
+              hidden: true,
+            },
+          ],
+          preview: {prepare: () => ({title: 'Divider ───'})},
+        },
       ],
     },
   ],
