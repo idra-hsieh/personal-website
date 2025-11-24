@@ -51,7 +51,7 @@ const ptComponents: PortableTextComponents = {
             alt={alt}
             width={800}
             height={500}
-            className="rounded-lg border mx-auto"
+            className="w-full h-[250px] object-cover rounded-lg border mx-auto"
           />
           {caption ? (
             <figcaption className="mt-2 text-center text-sm text-foreground/80">
@@ -104,48 +104,51 @@ const ptComponents: PortableTextComponents = {
 
 // Explicitly satisfy Next.js Page type to avoid the Promise<any> constraint issue
 const BlogArticle = (async ({ params }: { params: { slug: string } }) => {
-    const data = await getData(params.slug);
+  const data = await getData(params.slug);
 
-    return (
-        <div className="mt-2 flex flex-col items-center px-10 lg:px-0">
-            {/* Title */}
-            <h1 className="text-center">
-                <span className="mt-1 mb-3 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl max-w-[800px] leading-relaxed">
-                    {data.title}
-                </span>
-            </h1>
+  return (
+    <div className="mt-2 flex flex-col items-center px-10 lg:px-0">
+      {/* Title */}
+      <h1 className="text-center">
+        <span className="mt-1 mb-3 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl max-w-[800px] leading-relaxed">
+          {data.title}
+        </span>
+      </h1>
 
-            {/* Published date */}
-            {data.publishedAt && (
-                <p className="text-base font-sans text-foreground/60 font-semibold mt-2">
-                    |{" "}
-                    {new Date(data.publishedAt).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                    })}{" "}
-                    |
-                </p>
-            )}
+      {/* Published date */}
+      {data.publishedAt && (
+        <p className="text-base font-sans text-foreground/60 font-semibold mt-2">
+          |{" "}
+          {new Date(data.publishedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}{" "}
+          |
+        </p>
+      )}
 
-            {/* Title image */}
-            {data.titleImage && (
-                <Image
-                    src={urlFor(data.titleImage).url()}
-                    width={800}
-                    height={800}
-                    alt="personal website project"
-                    priority
-                    className="rounded-lg mt-8 border border-foreground/20"
-                />
-            )}
+      {/* Title image */}
+      {data.titleImage && (
+        <figure className="mt-8 w-full flex justify-center">
+          <div className="relative w-full max-w-[800px] aspect-video overflow-hidden rounded-lg border border-foreground/20">
+            <Image
+              src={urlFor(data.titleImage).url()}
+              alt="personal website project"
+              fill
+              priority
+              className="object-cover"
+            />
+          </div>
+        </figure>
+      )}
 
-            {/* Main content */}
-            <div className="mt-16 prose prose-beige prose-lg font-sans">
-                <PortableText value={data.content} components={ptComponents} />
-            </div>
-        </div>
-    );
+      {/* Main content */}
+      <div className="mt-16 prose prose-beige prose-lg font-sans">
+        <PortableText value={data.content} components={ptComponents} />
+      </div>
+    </div>
+  );
 }) satisfies (props: { params: { slug: string } }) => Promise<JSX.Element>;
 
 export default BlogArticle;
