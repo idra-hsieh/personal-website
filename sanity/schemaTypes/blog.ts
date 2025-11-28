@@ -55,7 +55,31 @@ export default {
           ],
         },
 
+        /* code block */
         {type: 'code'},
+
+        /* inline video */
+        {
+          type: 'file',
+          name: 'video',
+          title: 'Video',
+          options: {
+            accept: 'video/*', // only allow video files
+          },
+          fields: [
+            {
+              name: 'label',
+              type: 'string',
+              title: 'Label / Description',
+            },
+            {
+              name: 'poster',
+              type: 'image',
+              title: 'Poster image (optional)',
+              options: {hotspot: true},
+            },
+          ],
+        },
 
         /* divider line */
         {
