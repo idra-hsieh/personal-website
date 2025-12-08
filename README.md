@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Idra Hsieh - Personal Website**
+This repository contains the source code for a personal portfolio website. The application is designed to showcase professional projects, engineering skills, and blog content. It is built as a modern web application using Next.js for the frontend and Sanity for content management.
 
-## Getting Started
+## **Tech Stack**
+The project utilizes the following technologies and libraries:
+| Category            | Technology                                      |
+|---------------------|--------------------------------------------------|
+| Framework           | Next.js 15 (App Router)                          |
+| Language            | TypeScript                                       |
+| Styling             | Tailwind CSS 4, Styled Components                |
+| CMS                 | Sanity                                           |
+| Animation           | Framer Motion, React CountUp                     |
+| UI Components       | Radix UI (Primitives), Lucide React (Icons)      |
+| Fonts               | Fraunces, Nunito Sans                            |
+| Form Handling       | Formspree                                        |
+| Linting & Formatting| ESLint, Prettier                                 |
 
-First, run the development server:
+## **Scripts**
+The following scripts are available in the project root:
+- **npm run dev:** Starts the Next.js development server.
+- **npm run build:** Builds the application for production.
+- **npm run start:** Starts the production server.
+- **npm run lint:** Runs ESLint to identify code quality issues.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## **License**
+This project is open source and available under the MIT License.
