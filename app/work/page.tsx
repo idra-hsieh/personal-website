@@ -261,7 +261,7 @@ const Work = () => {
           </div>
 
           {/* RIGHT — SLIDER */}
-          <div className="w-full lg:w-[55%]">
+          <div className="w-full lg:w-[55%] mt-5">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
