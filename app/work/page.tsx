@@ -24,14 +24,37 @@ const projects = [
     num: "01",
     category: "full stack",
     title: "Charm Money Indicator",
-    description:
-      "A modern Next.js 16 application designed to help users discover their financial archetypes...",
+    description: (
+      <div className="space-y-2 text-base">
+        <ul className="list-disc pl-4 space-y-3 leading-relaxed [&_li]:pl-2">
+          <li>
+            <strong className="text-foreground">CMI Engine:</strong>{" "}
+            32-archetype financial personality profiling.
+          </li>
+          <li>
+            <strong className="text-foreground">Global Support:</strong> Full
+            i18n for EN, JA, and ZH.
+          </li>
+          <li>
+            <strong className="text-foreground">Modern UI/UX:</strong>{" "}
+            Responsive design with Tailwind 4, Framer Motion and Recharts.
+          </li>
+          <li>
+            <strong className="text-foreground">Backend:</strong> Secure
+            Supabase auth & transactional emails.
+          </li>
+        </ul>
+        <p className="text-foreground italic pt-4 font-primary">
+          Watch the demo video for a full walkthrough.
+        </p>
+      </div>
+    ),
     stack: [
       { name: "Next.js" },
       { name: "TypeScript" },
+      { name: "Tailwind" },
       { name: "Docker" },
       { name: "Google Cloud" },
-      { name: "Recharts" },
     ],
     video: "/assets/work/demo1.mp4",
     image: "/assets/work/thumb1.png",
@@ -42,23 +65,83 @@ const projects = [
     num: "02",
     category: "full stack",
     title: "Lumi Diary Digest",
-    description: "(placeholder for description)",
-    stack: [{ name: "Next.js" }, { name: "Tailwind Css" }, { name: "Node.js" }],
+    description: (
+      <div className="space-y-2 text-base">
+        <ul className="list-disc pl-4 space-y-3 leading-relaxed [&_li]:pl-2">
+          <li>
+            <strong className="text-foreground">Data Layer:</strong> Type-safe
+            PostgreSQL managed via Prisma.
+          </li>
+          <li>
+            <strong className="text-foreground">Performance:</strong> Server
+            Actions for zero-API overhead.
+          </li>
+          <li>
+            <strong className="text-foreground">Modern UI/UX:</strong>{" "}
+            Responsive Shadcn layout & Dark Mode.
+          </li>
+          <li>
+            <strong className="text-foreground">Backend:</strong> Robust
+            authentication flow via Supabase.
+          </li>
+        </ul>
+        <p className="text-foreground italic pt-4 font-primary">
+          Watch the demo video for a full walkthrough.
+        </p>
+      </div>
+    ),
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind" },
+      { name: "Supabase" },
+      { name: "Prisma" },
+    ],
     video: "",
     image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
+    live: "https://lumi-diary-digest.vercel.app",
+    github: "https://github.com/idra-hsieh/lumi-diary-digest",
   },
   {
     num: "03",
     category: "frontend",
     title: "Personal Website",
-    description: "(placeholder for description)",
-    stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }],
+    description: (
+      <div className="space-y-2 text-base">
+        <ul className="list-disc pl-4 space-y-3 leading-relaxed [&_li]:pl-2">
+          <li>
+            <strong className="text-foreground">Headless CMS:</strong> Real-time
+            content updates via Sanity.
+          </li>
+          <li>
+            <strong className="text-foreground">Interactive UX:</strong> Fluid
+            page transitions & motion effects.
+          </li>
+          <li>
+            <strong className="text-foreground">Modern UI/UX:</strong>{" "}
+            Responsive Tailwind & Shadcn components.
+          </li>
+          <li>
+            <strong className="text-foreground">Contact System:</strong>{" "}
+            Serverless form handling via Formspree.
+          </li>
+        </ul>
+        <p className="text-foreground italic pt-4 font-primary">
+          Watch the demo video for a full walkthrough.
+        </p>
+      </div>
+    ),
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind" },
+      { name: "Framer Motion" },
+      { name: "Sanity" },
+    ],
     video: "",
     image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    live: "https://idra-hsieh.vercel.app/",
+    github: "https://github.com/idra-hsieh/personal-website",
   },
 ];
 
@@ -82,7 +165,7 @@ const Work = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 px-12 lg:px-0 -mt-10"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row lg:gap-[30px]">
+        <div className="flex flex-col lg:flex-row lg:gap-[35px]">
           {/* LEFT — PROJECT INFO */}
           <div
             className="
@@ -92,7 +175,7 @@ const Work = () => {
           >
             <div className="flex flex-col gap-[30px] h-[50%]">
               {/* outline number */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline-foreground">
+              <div className="text-7xl leading-none font-extrabold text-transparent text-outline-foreground">
                 {project.num}
               </div>
 
@@ -112,9 +195,9 @@ const Work = () => {
               </h4>
 
               {/* description */}
-              <p className="text-foreground/60 font-sans">
+              <div className="text-foreground/60 font-sans">
                 {project.description}
-              </p>
+              </div>
 
               {/* tech stack */}
               <ul className="flex gap-4 flex-wrap">
@@ -178,7 +261,7 @@ const Work = () => {
           </div>
 
           {/* RIGHT — SLIDER */}
-          <div className="w-full lg:w-[60%] mt-10">
+          <div className="w-full lg:w-[55%]">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -189,7 +272,7 @@ const Work = () => {
                 <SwiperSlide key={index} className="w-full">
                   <div
                     className="
-                      relative aspect-[1.77/1] group overflow-hidden
+                      relative aspect-[4/3] group overflow-hidden
                       bg-foreground/20
                     "
                   >
