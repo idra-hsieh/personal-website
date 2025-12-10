@@ -58,7 +58,7 @@ const projects = [
       { name: "Docker" },
       { name: "Google Cloud" },
     ],
-    video: "/assets/work/video1.mov",
+    video: "/assets/work/video1.mp4",
     image: "/assets/work/thumb1.png",
     live: "https://charm-money.web.app/en/cmi-test",
     github: "https://github.com/idra-hsieh/charm",
@@ -102,7 +102,7 @@ const projects = [
       { name: "Supabase" },
       { name: "Prisma" },
     ],
-    video: "/assets/work/video2.mov",
+    video: "/assets/work/video2.mp4",
     image: "/assets/work/thumb2.png",
     live: "https://lumi-diary-digest.vercel.app",
     github: "https://github.com/idra-hsieh/lumi-diary-digest",
@@ -144,7 +144,7 @@ const projects = [
       { name: "Framer Motion" },
       { name: "Sanity" },
     ],
-    video: "/assets/work/video3.mov",
+    video: "/assets/work/video3.mp4",
     image: "/assets/work/thumb3.png",
     live: "https://idra-hsieh.vercel.app/",
     github: "https://github.com/idra-hsieh/personal-website",
@@ -328,7 +328,7 @@ const Work = () => {
           </div>
 
           {/* RIGHT — SLIDER */}
-          <div className="w-full lg:w-[55%] mt-16">
+          <div className="w-full lg:w-[55%] mt-20">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
