@@ -46,9 +46,6 @@ const projects = [
             Supabase auth & transactional emails.
           </li>
         </ul>
-        <p className="text-foreground italic pt-4 font-primary">
-          Watch the demo video for a full walkthrough.
-        </p>
       </div>
     ),
     stack: [
@@ -90,9 +87,6 @@ const projects = [
             authentication flow via Supabase.
           </li>
         </ul>
-        <p className="text-foreground italic pt-4 font-primary">
-          Watch the demo video for a full walkthrough.
-        </p>
       </div>
     ),
     stack: [
@@ -132,9 +126,6 @@ const projects = [
             Serverless form handling via Formspree.
           </li>
         </ul>
-        <p className="text-foreground italic pt-4 font-primary">
-          Watch the demo video for a full walkthrough.
-        </p>
       </div>
     ),
     stack: [
@@ -221,6 +212,19 @@ const Work = () => {
 
               {/* divider */}
               <div className="border border-foreground/20"></div>
+
+              <p className="text-foreground/60 italic font-primary text-sm">
+                Watch the demo below and read my{" "}
+                <a
+                  href="https://idrasbuildingblog.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground/80"
+                >
+                  Substack
+                </a>{" "}
+                for the build log.
+              </p>
 
               {/* buttons */}
               <div className="flex items-center gap-4">
