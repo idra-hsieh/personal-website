@@ -29,16 +29,37 @@ const experience = {
 
 // education data
 const education = {
-    // icon: ''
-    title: "My education",
-    description: "A mix of university study, self-directed learning, and a VC-sponsored gap year shaped my path toward practical software engineering.",
-    items: [
-        { institution: "freeCodeCamp Online Bootcamp", degree: "Full Stack Web Development", duration: "2025-2026" },
-        { institution: "CS50, Harvard University", degree: "Introduction to Computer Science", duration: "2025" },
-        { institution: "University of London", degree: "BSc in Computer Science ", duration: "2024" },
-        { institution: "AppWorks, Jamie Lin (founder)", degree: "Startup Gap Year Program Fellow", duration: "2023-2024" },
-        { institution: "University of London", degree: "BSc in Mathematics and Economics", duration: "2022-2023" },
-    ],
+  // icon: ''
+  title: "My education",
+  description:
+    "A mix of university study, self-directed learning, and a VC-sponsored gap year shaped my path toward practical software engineering.",
+  items: [
+    {
+      institution: "freeCodeCamp Online Bootcamp",
+      degree: "Full Stack Web Development",
+      duration: "2025",
+    },
+    {
+      institution: "CS50, Harvard University",
+      degree: "Introduction to Computer Science",
+      duration: "2025",
+    },
+    {
+      institution: "AppWorks, Jamie Lin (founder)",
+      degree: "Startup Gap Year Program Fellow",
+      duration: "2023-2024",
+    },
+    {
+      institution: "University of London",
+      degree: "BSc in Mathematics and Economics",
+      duration: "2022-2024",
+    },
+    {
+      institution: "National Chengchi University ",
+      degree: "Foreign Languages & Economics (Minor)",
+      duration: "2019-2022",
+    },
+  ],
 };
 
 // skills data
