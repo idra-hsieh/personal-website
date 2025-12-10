@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
+import { SiFigma } from "react-icons/si";
+import { FiVideo } from "react-icons/fi";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -56,10 +58,13 @@ const projects = [
       { name: "Docker" },
       { name: "Google Cloud" },
     ],
-    video: "/assets/work/demo1.mp4",
+    video: "/assets/work/video1.mov",
     image: "/assets/work/thumb1.png",
     live: "https://charm-money.web.app/en/cmi-test",
     github: "https://github.com/idra-hsieh/charm",
+    demo: "",
+    figma:
+      "https://www.figma.com/design/tClj79Xrjblchf3CE0SY1Q/Charm?node-id=0-1&t=eAISlaNaWZN5z0bE-1",
   },
   {
     num: "02",
@@ -97,10 +102,11 @@ const projects = [
       { name: "Supabase" },
       { name: "Prisma" },
     ],
-    video: "",
+    video: "/assets/work/video2.mov",
     image: "/assets/work/thumb2.png",
     live: "https://lumi-diary-digest.vercel.app",
     github: "https://github.com/idra-hsieh/lumi-diary-digest",
+    demo: "",
   },
   {
     num: "03",
@@ -138,10 +144,11 @@ const projects = [
       { name: "Framer Motion" },
       { name: "Sanity" },
     ],
-    video: "",
+    video: "/assets/work/video3.mov",
     image: "/assets/work/thumb3.png",
     live: "https://idra-hsieh.vercel.app/",
     github: "https://github.com/idra-hsieh/personal-website",
+    demo: "",
   },
 ];
 
@@ -217,8 +224,13 @@ const Work = () => {
 
               {/* buttons */}
               <div className="flex items-center gap-4">
+                {/* Live */}
                 {project.live && (
-                  <Link href={project.live}>
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger
@@ -237,8 +249,13 @@ const Work = () => {
                   </Link>
                 )}
 
+                {/* GitHub */}
                 {project.github && (
-                  <Link href={project.github}>
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger
@@ -256,12 +273,62 @@ const Work = () => {
                     </TooltipProvider>
                   </Link>
                 )}
+
+                {/* Demo Video */}
+                {project.demo && (
+                  <Link
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          className="
+                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            flex justify-center items-center group
+                          "
+                        >
+                          <SiFigma className="text-foreground text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Watch Demo</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+
+                {/* Figma */}
+                {project.figma && (
+                  <Link
+                    href={project.figma}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          className="
+                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            flex justify-center items-center group
+                          "
+                        >
+                          <SiFigma className="text-foreground text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Figma Design</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
 
           {/* RIGHT — SLIDER */}
-          <div className="w-full lg:w-[55%] mt-5">
+          <div className="w-full lg:w-[55%] mt-16">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -272,7 +339,7 @@ const Work = () => {
                 <SwiperSlide key={index} className="w-full">
                   <div
                     className="
-                      relative aspect-[4/3] group overflow-hidden
+                      relative aspect-[16/10] group overflow-hidden
                       bg-foreground/20
                     "
                   >
@@ -316,7 +383,7 @@ const Work = () => {
                   flex items-center justify-between gap-3
                 "
                 btnStyles="
-                  bg-accent hover:bg-accent-hover text-primary text-[22px]
+                  bg-accent/60 hover:bg-accent-hover/60 text-primary text-[22px]
                   w-[44px] h-[44px] flex justify-center items-center transition-all
                 "
                 iconsStyles=""
