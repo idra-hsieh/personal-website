@@ -59,7 +59,7 @@ const projects = [
     image: "/assets/work/thumb1.png",
     live: "https://charm-money.web.app/en/cmi-test",
     github: "https://github.com/idra-hsieh/charm",
-    demo: "",
+    demo: "placeholder",
     figma:
       "https://www.figma.com/design/tClj79Xrjblchf3CE0SY1Q/Charm?node-id=0-1&t=eAISlaNaWZN5z0bE-1",
   },
@@ -100,7 +100,7 @@ const projects = [
     image: "/assets/work/thumb2.png",
     live: "https://lumi-diary-digest.vercel.app",
     github: "https://github.com/idra-hsieh/lumi-diary-digest",
-    demo: "",
+    demo: "placeholder",
   },
   {
     num: "03",
@@ -139,7 +139,7 @@ const projects = [
     image: "/assets/work/thumb3.png",
     live: "https://idra-hsieh.vercel.app/",
     github: "https://github.com/idra-hsieh/personal-website",
-    demo: "",
+    demo: "placeholder",
   },
 ];
 
@@ -239,7 +239,7 @@ const Work = () => {
                       <Tooltip>
                         <TooltipTrigger
                           className="
-                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] rounded-full bg-foreground/5
                             flex justify-center items-center group
                           "
                         >
@@ -264,7 +264,7 @@ const Work = () => {
                       <Tooltip>
                         <TooltipTrigger
                           className="
-                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] rounded-full bg-foreground/5
                             flex justify-center items-center group
                           "
                         >
@@ -289,11 +289,11 @@ const Work = () => {
                       <Tooltip>
                         <TooltipTrigger
                           className="
-                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] rounded-full bg-foreground/5
                             flex justify-center items-center group
                           "
                         >
-                          <SiFigma className="text-foreground text-3xl group-hover:text-accent" />
+                          <FiVideo className="text-foreground text-3xl group-hover:text-accent" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Watch Demo</p>
@@ -314,7 +314,7 @@ const Work = () => {
                       <Tooltip>
                         <TooltipTrigger
                           className="
-                            w-[70px] h-[70px] rounded-full bg-foreground/5
+                            w-[65px] h-[65px] sm:w-[70px] sm:h-[70px] rounded-full bg-foreground/5
                             flex justify-center items-center group
                           "
                         >
