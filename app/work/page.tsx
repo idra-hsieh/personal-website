@@ -59,7 +59,7 @@ const projects = [
     image: "/assets/work/thumb1.png",
     live: "https://charm-money.web.app/en/cmi-test",
     github: "https://github.com/idra-hsieh/charm",
-    demo: "placeholder",
+    demo: "https://www.loom.com/share/2c2f39ac447541df8b5a0ba5545fe5fd",
     figma:
       "https://www.figma.com/design/tClj79Xrjblchf3CE0SY1Q/Charm?node-id=0-1&t=eAISlaNaWZN5z0bE-1",
   },
@@ -100,7 +100,7 @@ const projects = [
     image: "/assets/work/thumb2.png",
     live: "https://lumi-diary-digest.vercel.app",
     github: "https://github.com/idra-hsieh/lumi-diary-digest",
-    demo: "placeholder",
+    demo: "https://www.loom.com/share/23b44c6c47e94b9db525e403f06f6966",
   },
   {
     num: "03",
@@ -139,7 +139,7 @@ const projects = [
     image: "/assets/work/thumb3.png",
     live: "https://idra-hsieh.vercel.app/",
     github: "https://github.com/idra-hsieh/personal-website",
-    demo: "placeholder",
+    demo: "https://www.loom.com/share/f6cac12241ab45638f571a9ac83677f3",
   },
 ];
 
